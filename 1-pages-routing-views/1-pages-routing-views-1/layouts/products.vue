@@ -1,6 +1,7 @@
 <template>
   <div>
     <Header />
+    <header>PRODUCTS SECTION (Layout/products.vue)</header>
     <nuxt />
   </div>
 </template>
@@ -14,7 +15,6 @@
     }
   }
 </script>
-
 
 <style>
 </style>
