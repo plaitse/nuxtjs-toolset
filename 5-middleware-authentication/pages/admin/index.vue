@@ -11,8 +11,8 @@
 </template>
 
 <script>
-// import PostList from '@/components/Posts/PostList.vue';
-// import AppButton from '@/components/UI/AppButton.vue';
+import PostList from '@/components/Posts/PostList.vue';
+import AppButton from '@/components/UI/AppButton.vue';
 
 export default {
   layout: 'admin',
@@ -21,10 +21,10 @@ export default {
       return this.$store.getters.loadedPosts;
     }
   },
-  // components: {
-  //   PostList,
-  //   AppButton
-  // }
+  components: {
+    PostList,
+    AppButton
+  }
 }
 </script>
 

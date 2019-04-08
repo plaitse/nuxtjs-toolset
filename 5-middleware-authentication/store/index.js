@@ -22,19 +22,13 @@ const createStore = () => {
       /* This method is dispatched by Nuxt to initialize the store to fetch some data 
         - that we use a lot in many components - only once instead of constantly reaching out the server */
       nuxtServerInit(vuexContext, context) {
-        // BaseUrl refers to the one sets in nuxt.config.js env
-        // return context.app.$axios.get(process.env.baseUrl + '.json')
-        // We use the axios package from @nuxt set in nuxt.config.js modules
-        return context.app.$axios.$get('.json')
+        return axios.get('https://nuxtjs-toolset.firebaseio.com/posts.json')
           .then(response => {
             console.log(response);
             // Format the object to an array
             const postsArray = [];
-            // for (const key in response.data) {
-              // postsArray.push({...response.data[key], id: key});
-              // The @nuxt/axios package directly gives us the data we want
-            for (const key in response) {
-              postsArray.push({...response[key], id: key});
+            for (const key in response.data) {
+              postsArray.push({...response.data[key], id: key});
             }
             vuexContext.commit('setPosts', postsArray);
           })

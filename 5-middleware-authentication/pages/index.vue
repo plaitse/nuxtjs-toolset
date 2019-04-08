@@ -8,7 +8,7 @@
 </template>
 
 <script>
-// import PostList from '@/components/Posts/PostList.vue'; --> Not needed anymore because registered in plugins in nuxt.config.js
+import PostList from '@/components/Posts/PostList.vue';
 
 export default {
   computed: {
@@ -16,9 +16,9 @@ export default {
       return this.$store.getters.loadedPosts;
     }
   },
-  // components: {
-  //   PostList
-  // }
+  components: {
+    PostList
+  }
 }
 </script>
 

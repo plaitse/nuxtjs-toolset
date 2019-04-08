@@ -5,7 +5,7 @@
 </template>
 
 <script>
-// import PostList from '@/components/Posts/PostList.vue';
+import PostList from '@/components/Posts/PostList.vue';
 
 export default {
   computed: {
@@ -13,11 +13,8 @@ export default {
       return this.$store.getters.loadedPosts;
     }
   },
-  // components: {
-  //   PostList
-  // },
-  head: {
-    title: 'This is a new title'
+  components: {
+    PostList
   }
 }
 </script>

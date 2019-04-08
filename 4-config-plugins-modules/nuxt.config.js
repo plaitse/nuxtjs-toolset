@@ -1,7 +1,8 @@
 import pkg from './package'
 
 export default {
-  mode: 'universal',
+  mode: 'universal', // Allows pre-rendered capabilities
+  // mode: 'spa' ---> No pre-rendered capabilities
 
   /*
   ** Headers of the page
@@ -22,7 +23,12 @@ export default {
   /*
   ** Customize the progress-bar color
   */
-  loading: { color: '#fff' },
+  loading: { // Can be disabled by passing false
+    color: '#fff',
+    height: '40px',
+    duration:'5000',
+    failedColor: 'red'
+  },
 
   /*
   ** Global CSS
@@ -34,12 +40,15 @@ export default {
   ** Plugins to load before mounting the App
   */
   plugins: [
+    '~plugins/core-components.js',
+    '~plugins/data-filter.js',
   ],
 
   /*
   ** Nuxt.js modules
   */
   modules: [
+    '@nuxtjs/axios',
   ],
 
   /*
@@ -51,5 +60,26 @@ export default {
     */
     extend(config, ctx) {
     }
-  }
+  },
+  axios: {
+    baseURL: process.env.BASE_URL || 'https://nuxtjs-toolset.firebaseio.com/posts'
+  },
+  
+  dev: true, // Means we are in development mode 
+
+  env: {
+    baseUrl: process.env.BASE_URL || 'https://nuxtjs-toolset.firebaseio.com/posts'
+  },
+
+  router: {
+    // This redirects every unknown visited route to /
+    extendRoutes(routes, resolve) {
+      routes.push({
+        path: '*',
+        component: resolve(__dirname, 'pages/index.vue')
+      })
+    }
+  },
+
+  // srcDir: 'client-app/' --> Tells Nuxt to look for pages in this folder
 }
