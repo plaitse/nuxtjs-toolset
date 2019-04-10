@@ -89,6 +89,10 @@ const createStore = () => {
             // For the server
             Cookie.set('jwt', response.data.idToken);
             Cookie.set('expirationDate', new Date().getTime() + +response.data.expiresIn * 1000);
+            return axios.post('localhost:3000/api/track-data', {
+              // Change localhost to 127.0.0.1 if error
+              data: 'Authenticated'
+            });
           })
           .catch(error => console.log(error));
       },

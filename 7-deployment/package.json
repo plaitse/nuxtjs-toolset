@@ -1,7 +1,7 @@
 {
-  "name": "6-server-side",
+  "name": "7-deployment",
   "version": "1.0.0",
-  "description": "My finest Nuxt.js project",
+  "description": "Nuxt.js course for Udemy",
   "author": "plaitse",
   "private": true,
   "scripts": {
@@ -11,14 +11,14 @@
     "generate": "nuxt generate"
   },
   "dependencies": {
-    "axios": "^0.18.0",
-    "body-parser": "^1.18.3",
-    "cross-env": "^5.2.0",
-    "express": "^4.16.4",
+    "@nuxtjs/axios": "^4.5.2",
+    "axios": "^0.17.1",
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
     "js-cookie": "^2.2.0",
-    "nuxt": "^2.4.0"
+    "nuxt": "^1.0.0"
   },
   "devDependencies": {
-    "nodemon": "^1.18.9"
+    "cross-env": "^5.0.1"
   }
 }
