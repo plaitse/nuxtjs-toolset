@@ -1,6 +1,6 @@
 # nuxtjs-toolset
 
-Nuxt.js is JavaScript framework to prepare and render VueJS pages. A better SEO is one of its benefits.
+Nuxt.js is a JavaScript framework to prepare and render VueJS pages. A better SEO is one of its benefits.
 
 ## Firebase
 
