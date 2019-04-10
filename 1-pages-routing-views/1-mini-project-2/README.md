@@ -1,4 +1,4 @@
-# my-first-nuxt-app
+# nuxt-app
 
 > My finest Nuxt.js project
 

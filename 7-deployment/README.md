@@ -1,4 +1,4 @@
-# my-first-nuxt-app
+# nuxt-app
 
 ## Deploying a Universal App
 
